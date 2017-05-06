@@ -1,0 +1,11 @@
+[user]
+	name = Eric Hambro
+	email = eric.hambro@gmail.com
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+  required = true
+[alias]
+  logdog = log --decorate --oneline --graph
+  adds = add -p
+  logs = log --format='%n%C(auto)%h %C(yellow)%an <%ce>%Creset%n %s ' --stat
