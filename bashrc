@@ -1,6 +1,4 @@
 echo '~/.bashrc has run'
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Colours
 blink=$(tput setaf blink)
@@ -9,11 +7,18 @@ blue=$(tput setaf 6)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
-PS1='\[$green\]\h\[$reset\]:\[$blue\]\w \[$reset\]\$ '
+export PS1='\[$green\]\h\[$reset\]:\[$blue\]\w \[$reset\]\$ '
+export LSCOLORS='ExgxxxxxAxxxxxxxxxxxxx' # dirs:blue; syml: cyan; exec:grey
 
 ### Aliases
 
-alias ll='ls -l'
+alias ll='ls -lG'
+alias la='ls -lGa'
 alias c='clear'
+alias rm='rm -i'
+
+alias subl='open -a "Sublime Text"'
 
 alias gp='cd ~/Programming'
+alias gd='cd ~/Documents'
+
