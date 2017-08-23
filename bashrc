@@ -38,5 +38,7 @@ alias subl='open -a "Sublime Text"'
 
 alias gp='cd ~/Programming/Projects'
 alias gw='cd ~/Programming/Work'
+alias gl='cd ~/Programming/Learning'
 alias gd='cd ~/Documents'
 
+alias bashrc='vim ~/Programming/dotfiles/bashrc'

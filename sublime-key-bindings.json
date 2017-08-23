@@ -3,5 +3,7 @@
 	{ "keys": ["super+right"], "command": "focus_neighboring_group" },
 	{ "keys": ["super+up", "super+left"], "command": "move_to_neighboring_group", "args": {"forward": false} },
 	{ "keys": ["super+up", "super+right"], "command": "move_to_neighboring_group" },
-	
+	{ "keys": ["super+shift+up"], "command": "select_lines", "args": {"forward": false} },
+	{ "keys": ["super+shift+down"], "command": "select_lines", "args": {"forward": true} },
 ]
+

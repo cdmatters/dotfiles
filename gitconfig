@@ -9,3 +9,4 @@
   logdog = log --decorate --oneline --graph
   adds = add -p
   logs = log --format='%n%C(auto)%h %C(yellow)%an <%ce>%Creset%n %s ' --stat
+  po = push origin HEAD
