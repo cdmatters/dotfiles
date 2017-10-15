@@ -40,5 +40,8 @@ alias gp='cd ~/Programming/Projects'
 alias gw='cd ~/Programming/Work'
 alias gl='cd ~/Programming/Learning'
 alias gd='cd ~/Documents'
+alias gu='cd ~/Documents/UCL'
+
+alias venv='source venv/bin/activate'
 
 alias bashrc='vim ~/Programming/dotfiles/bashrc'
