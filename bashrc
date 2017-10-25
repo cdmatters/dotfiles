@@ -13,7 +13,6 @@ else
   echo "failed launch  git-prompt"
 fi
 
-
 ### Colours
 
 blink=$(tput setaf blink)
@@ -24,6 +23,11 @@ reset=$(tput sgr0)
 
 export PS1='\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
 export LSCOLORS='ExgxxxxxAxxxxxxxxxxxxx' # dirs:blue; syml: cyan; exec:grey
+
+### Source z.sh - 'jump around'
+if [ -f /usr/local/Cellar/z/1.9/etc/profile.d/z.sh ]; then
+  source  /usr/local/Cellar/z/1.9/etc/profile.d/z.sh 
+fi # brew install z. source viewable @github.com/rupa/z
 
 ### Aliases
 
@@ -42,6 +46,11 @@ alias gl='cd ~/Programming/Learning'
 alias gd='cd ~/Documents'
 alias gu='cd ~/Documents/UCL'
 
+alias mkvenv='python3 -m venv venv'
 alias venv='source venv/bin/activate'
+alias virtualenv='virtualenv --no-site-packages'
+alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
+
 
 alias bashrc='vim ~/Programming/dotfiles/bashrc'
+

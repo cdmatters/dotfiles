@@ -29,6 +29,7 @@ After a complete reboot here's a little recipe list for the programs installed o
 * git 
 * htop
 * tree
+* z
 
 #### Config
 * gmail -> email
