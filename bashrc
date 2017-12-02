@@ -17,6 +17,7 @@ fi
 
 blink=$(tput setaf blink)
 green=$(tput setaf 2)
+yellow=$(tput setaf 3)
 blue=$(tput setaf 6)
 bold=$(tput bold)
 reset=$(tput sgr0)
@@ -54,3 +55,6 @@ alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 
 alias bashrc='vim ~/Programming/dotfiles/bashrc'
 
+
+AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$ '
+alias amps1='PS1=$AM_PS1'
