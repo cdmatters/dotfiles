@@ -5,5 +5,9 @@
 	{ "keys": ["super+up", "super+right"], "command": "move_to_neighboring_group" },
 	{ "keys": ["super+shift+up"], "command": "select_lines", "args": {"forward": false} },
 	{ "keys": ["super+shift+down"], "command": "select_lines", "args": {"forward": true} },
+
+    { "keys": ["super+e"], "command": "find_under" },
+    { "keys": ["super+shift+e"], "command": "find_under_prev" },
+
 ]
 
