@@ -30,6 +30,11 @@ if [ -f /usr/local/Cellar/z/1.9/etc/profile.d/z.sh ]; then
   source  /usr/local/Cellar/z/1.9/etc/profile.d/z.sh 
 fi # brew install z. source viewable @github.com/rupa/z
 
+### Source coinmin
+if [ -f ~/Programming/Projects/coinmin/coinmin.sh ]; then 
+  source ~/Programming/Projects/coinmin/coinmin.sh
+fi
+
 ### Aliases
 
 alias ll='ls -lG'
