@@ -33,6 +33,8 @@ fi # brew install z. source viewable @github.com/rupa/z
 ### Source coinmin
 if [ -f ~/Programming/Projects/coinmin/coinmin.sh ]; then 
   source ~/Programming/Projects/coinmin/coinmin.sh
+  alias coinminfinity="while True; do coinmin 7; sleep 303; done"
+  alias coinminf="coinminfinity"
 fi
 
 ### Aliases
