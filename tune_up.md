@@ -11,6 +11,9 @@ After a complete reboot here's a little recipe list for the programs installed o
 * xcode
 * iterm 2
 * docker for mac
+* mactex
+* matlab (if necessary)
+* texpad
 
 #### Media
 * vlc
@@ -30,6 +33,7 @@ After a complete reboot here's a little recipe list for the programs installed o
 * htop
 * tree
 * z
+* tmux
 
 #### Config
 * gmail -> email

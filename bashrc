@@ -56,6 +56,7 @@ alias gu='cd ~/Documents/UCL'
 
 alias mkvenv='python3 -m venv venv'
 alias venv='source venv/bin/activate'
+alias mkvenv27='virtualenv --no-site-packages'
 alias virtualenv='virtualenv --no-site-packages'
 alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 
