@@ -35,6 +35,9 @@ After a complete reboot here's a little recipe list for the programs installed o
 * z
 * tmux
 
+#### Third Party
+* xgboost
+
 #### Config
 * gmail -> email
 * desktop 

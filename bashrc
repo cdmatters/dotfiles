@@ -54,12 +54,17 @@ alias gl='cd ~/Programming/Learning'
 alias gd='cd ~/Documents'
 alias gu='cd ~/Documents/UCL'
 
-alias mkvenv='python3 -m venv venv'
+alias psh='pushd'
+alias pop='popd'
+
 alias venv='source venv/bin/activate'
-alias mkvenv27='virtualenv --no-site-packages'
+alias mkvenv='python3 -m venv venv'
+alias mkvenvssp='python3 -m venv venv --system-site-packages'
+alias mkvenv27='virtualenv --no-site-packages venv'
+alias mkvenv27ssp='virtualenv --system-site-packages venv'
+
 alias virtualenv='virtualenv --no-site-packages'
 alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
-
 
 alias bashrc='vim ~/Programming/dotfiles/bashrc'
 

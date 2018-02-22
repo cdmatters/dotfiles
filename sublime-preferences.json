@@ -1,0 +1,18 @@
+{
+    "caret_extra_bottom": 3,
+    "caret_extra_top": 3,
+    "caret_extra_width": 2,
+    "color_scheme": "Packages/Theme - Seti Monokai/scheme/Seti Monokai.tmTheme",
+    "font_size": 12,
+    "highlight_line": true,
+    "translate_tabs_to_spaces": true,
+    "rulers": [80],
+    "ignored_packages":
+    [
+        "Markdown",
+        "Vintage"
+    ],
+    "overlay_scroll_bars": "enabled",
+    "theme": "Seti Monokai.sublime-theme",
+    "translate_tabs_to_spaces": true
+}
