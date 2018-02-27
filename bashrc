@@ -43,6 +43,7 @@ if [ -f ~/Programming/Projects/coinmin/coinmin.sh ]; then
   alias coinminf="coinminfinity"
 fi
 
+
 ### Aliases
 
 alias ll='ls -lG'
@@ -50,7 +51,7 @@ alias la='ls -lGa'
 alias c='clear'
 alias rm='rm -i'
 
-alias tree='tree -C'
+alias tree='tree -C -I venv'
 
 alias subl='open -a "Sublime Text"'
 
