@@ -1,4 +1,4 @@
-function gitignore (){
+function _gitignore (){
    gi_file=$(shopt -s nocaseglob; ls ~/Programming/ThirdParty/gitignore/$1\.gitignore)
    if [ -f ./.gitignore ]; then
      echo "gitignore already exists" && return 1

@@ -13,6 +13,12 @@ else
   echo "failed launch  git-prompt"
 fi
 
+if [ -f ~/.gitignore.sh ]; then  
+  source ~/.gitignore.sh
+else
+  echo "failed launch  git-ignore"
+fi
+
 ### Colours
 
 blink=$(tput setaf blink)
@@ -58,16 +64,18 @@ alias psh='pushd'
 alias pop='popd'
 
 alias venv='source venv/bin/activate'
-alias mkvenv='python3 -m venv venv'
-alias mkvenvssp='python3 -m venv venv --system-site-packages'
-alias mkvenv27='virtualenv --no-site-packages venv'
-alias mkvenv27ssp='virtualenv --system-site-packages venv'
+alias mkvenv='python3 -m venv venv && _gitignore python'
+alias mkvenvssp='python3 -m venv venv --system-site-packages && _gitignore python'
+alias mkvenv27='virtualenv --no-site-packages venv && _gitignore python'
+alias mkvenv27ssp='virtualenv --system-site-packages venv && _gitignore python'
 
 alias virtualenv='virtualenv --no-site-packages'
 alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 
-alias bashrc='vim ~/Programming/dotfiles/bashrc'
+alias gitignore='_gitignore'
 
+alias bashrc='vim ~/Programming/dotfiles/bashrc'
 
 AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$ '
 alias amps1='PS1=$AM_PS1'
+
