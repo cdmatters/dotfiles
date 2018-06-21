@@ -48,8 +48,13 @@ fi
 
 alias ll='ls -lG'
 alias la='ls -lGa'
+alias ls='ls -G'
 alias c='clear'
 alias rm='rm -i'
+alias rec='ls -rt'
+alias dl='ls -rt ~/Downloads'
+
+
 
 alias tree='tree -C -I venv'
 
@@ -63,6 +68,8 @@ alias gu='cd ~/Documents/UCL'
 
 alias psh='pushd'
 alias pop='popd'
+
+alias jp='jupyter notebook'
 
 alias venv='source venv/bin/activate'
 alias mkvenv='python3 -m venv venv'
@@ -80,8 +87,27 @@ alias bashrc='vim ~/Programming/dotfiles/bashrc'
 AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$ '
 alias amps1='PS1=$AM_PS1'
 
+#alias o='open .'
+
+alias cast2gif='docker run --rm -v $PWD:/data asciinema/asciicast2gif'
 
 ### Functions
+
+function cpdl(){
+  cp ~/Downloads/$1 .
+}
+
+function o(){
+  shopt -s nocaseglob
+  # Fuzzy Open
+  if [ -z $1 ]; then
+    open .
+  else
+    for i in $@; do
+      open *$i*
+    done
+  fi
+}
 
 function proj(){
   # Initialize git & virtual environment for Python3 projects

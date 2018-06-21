@@ -34,6 +34,7 @@ After a complete reboot here's a little recipe list for the programs installed o
 * tree
 * z
 * tmux
+* rust
 
 #### Third Party
 * xgboost
