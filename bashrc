@@ -77,7 +77,7 @@ alias gitignore='_gitignore'
 
 alias bashrc='vim ~/Programming/dotfiles/bashrc'
 
-AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$ '
+AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
 alias amps1='PS1=$AM_PS1'
 
 
