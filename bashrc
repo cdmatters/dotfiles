@@ -1,4 +1,6 @@
 echo '~/.bashrc has run'
+# Prevent old terminals breaking with backspace in Vim
+stty erase '^?'
 
 ### Git Completion: 
 # sourcce the raw files on github.com: git/git/contrib/completion
