@@ -241,6 +241,13 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 "map <space> /
 "map <c-space> ?
 
+" Disable arrows for navigation for practice 
+"Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
 " Allow mouse
 set mouse=a
 
@@ -376,7 +383,6 @@ map <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
 map <leader>pp :setlocal paste!<cr>
-
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

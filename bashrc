@@ -84,7 +84,7 @@ alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 
 alias gitignore='_gitignore'
 
-alias bashrc='vim ~/Programming/dotfiles/bashrc'
+alias bashrc='vim ~/dotfiles/bashrc'
 
 AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
 alias amps1='PS1=$AM_PS1'
@@ -111,13 +111,33 @@ function o(){
   fi
 }
 
-function proj(){
-  # Initialize git & virtual environment for Python3 projects
-  echo "Initializing py3 project: $1"
-  mkdir -p $1 && cd $1 && mkvenv && git init && gitignore python  && touch README.md
-  echo "# $1" > README.md
-  git add .gitignore *.md && git commit -m "initial commit"
-  cd ..
-  echo "done"
+
+# added by Anaconda3 installer
+if [ "$HOST" = "knuckles.cs.ucl.ac.uk" ]; then 
+  alias venv='source activate proj'
+fi
+if [ "$HOST" = "blaze.cs.ucl.ac.uk" ]; then 
+  alias venv='source activate gpu-proj'
+fi
+
+function hogbuster(){
+  echo "hog busting..."
+  while true; do
+    if [ $(hog | wc -l)  = 5 ]; then
+      sleep 1
+    else
+      break
+    fi
+  done
+  source /usr/local/cuda/CUDA_VISIBILITY.sh
+  $@
 }
 
+
+cat /etc/motd
+alias hog='nvidia-smi | grep "MiB |$" | sed -E "s/\|\s{4}[0-9]\s{5,6}([0-9]*).*/\1/" | xargs ps u'
+alias blaze='ssh blaze'
+alias proj='cd ~/EWEEZ/project'
+export PATH="/cs/student/msc/ml/2017/ehambro/anaconda3/bin:$PATH"
+shopt -s expand_aliases # Dangerous potentially
+alias anaconda-python3-gpu="LD_LIBRARY_PATH='/share/apps/cuda-9.0/lib64:/share/apps/python-3.6.3-shared/lib:/share/apps/libc6_2.23/lib/x86_64-linux-gnu:/share/apps/libc6_2.23/lib64:/share/apps/gcc-6.2.0/lib64:/share/apps/gcc-6.2.0/lib:${LD_LIBRARY_PATH}' /share/apps/libc6_2.23/lib/x86_64-linux-gnu/ld-2.23.so ~/anaconda3/bin/python3"
