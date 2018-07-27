@@ -111,13 +111,4 @@ function o(){
   fi
 }
 
-function proj(){
-  # Initialize git & virtual environment for Python3 projects
-  echo "Initializing py3 project: $1"
-  mkdir -p $1 && cd $1 && mkvenv && git init && gitignore python  && touch README.md
-  echo "# $1" > README.md
-  git add .gitignore *.md && git commit -m "initial commit"
-  cd ..
-  echo "done"
-}
 
