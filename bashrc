@@ -72,6 +72,7 @@ alias psh='pushd'
 alias pop='popd'
 
 alias jp='jupyter notebook'
+alias hog='nvidia-smi | grep "MiB |$" | sed -E "s/\|\s{4}[0-9]\s{5,6}([0-9]*).*/\1/" | xargs ps -u -p'
 
 alias venv='source venv/bin/activate'
 alias mkvenv='python3 -m venv venv'
