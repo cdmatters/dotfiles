@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoPEP8",
+		"LaTeXTools",
+		"MarkdownEditing",
+		"MarkdownPreview",
+		"Package Control",
+		"Seti_UI",
+		"SFTP",
+		"SublimeLinter",
+		"SublimeLinter-pyflakes",
+		"Theme - Seti Monokai",
+		"Virtualenv",
+		"WordCount"
+	]
+}
