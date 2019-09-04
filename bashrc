@@ -30,7 +30,7 @@ blue=$(tput setaf 6)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
-export PS1='\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
+export PS1='\[$green$bold\]\h\[$reset\]:\[$blue$bold\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
 export LSCOLORS='ExgxxxxxAxxxxxxxxxxxxx' # dirs:blue; syml: cyan; exec:grey
 
 ### Source z.sh - 'jump around'
@@ -86,11 +86,13 @@ alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 alias gitignore='_gitignore'
 
 alias bashrc='vim ~/dotfiles/bashrc'
+alias tmuxconf='vim ~/dotfiles/tmux.conf'
 
 AM_PS1='\[$yellow\]\[$bold\]$(whoami)\[$reset\]@\[$green\]\h\[$reset\]:\[$blue\]\w\[$reset\]\n$(__git_ps1 \(%s\) )\$ '
 alias amps1='PS1=$AM_PS1'
 
-#alias o='open .'
+alias o='nautilus . &'
+alias op='nautilus -s . &'
 
 alias cast2gif='docker run --rm -v $PWD:/data asciinema/asciicast2gif'
 
