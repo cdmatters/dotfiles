@@ -12,7 +12,8 @@
   po = push origin HEAD
   keep-ours = "!f() { git checkout --ours -- $@ && git add $@; }; f "
   keep-theirs = "!f() { git checkout --theirs -- $@ && git add $@; }; f "
-  br = for-each-ref  --sort=-committerdate refs/heads/ --format='%(color:black bold)%(committerdate:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(color:white bold)%(HEAD)%(color: reset)%(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) -- %(contents:lines=1)'
+  br = for-each-ref  --sort=committerdate refs/heads/ --format='%(color:black bold)%(committerdate:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(color:white bold)%(HEAD)%(color: reset)%(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) -- %(contents:lines=1)'
+  brup = for-each-ref  --sort=-committerdate refs/heads/ --format='%(color:black bold)%(committerdate:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(color:white bold)%(HEAD)%(color: reset)%(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) -- %(contents:lines=1)'
 [core]
   editor = /usr/bin/vim
 	autocrlf = input

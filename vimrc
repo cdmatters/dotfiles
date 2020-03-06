@@ -52,6 +52,10 @@ Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+" From vdutor
+Plugin 'tpope/vim-commentary'
+Plugin 'terryma/vim-multiple-cursors'
+
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
@@ -99,7 +103,7 @@ let g:mapleader = "`"
 " Fast saving
 nmap <leader>w :w!<cr>
 
-
+set relativenumber
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

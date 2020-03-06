@@ -95,7 +95,7 @@ alias o='nautilus . &'
 alias op='nautilus -s . &'
 
 alias cast2gif='docker run --rm -v $PWD:/data asciinema/asciicast2gif'
-
+alias weather='curl wttr.in'
 ### Functions
 
 function cpdl(){
