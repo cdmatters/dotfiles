@@ -34,8 +34,8 @@ export PS1='\[$green$bold\]\h\[$reset\]:\[$blue$bold\]\w\[$reset\]\n$(__git_ps1 
 export LSCOLORS='ExgxxxxxAxxxxxxxxxxxxx' # dirs:blue; syml: cyan; exec:grey
 
 ### Source z.sh - 'jump around'
-if [ -f /usr/local/Cellar/z/1.9/etc/profile.d/z.sh ]; then
-  source  /usr/local/Cellar/z/1.9/etc/profile.d/z.sh 
+if [ -f ~/dotfiles/z.sh ]; then
+  source  ~/dotfiles/z.sh 
 fi # brew install z. source viewable @github.com/rupa/z
 
 ### Source coinmin
