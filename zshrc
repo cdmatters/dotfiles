@@ -80,6 +80,7 @@ alias virtualenv3='virtualenv --no-site-packages --python=python3.6'
 alias gitignore='_gitignore'
 
 alias bashrc='vim ~/dotfiles/bashrc'
+alias vimrc='vim ~/dotfiles/vimrc'
 alias zshrc='vim ~/dotfiles/zshrc'
 alias tmuxconf='vim ~/dotfiles/tmux.conf'
 
