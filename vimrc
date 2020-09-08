@@ -56,7 +56,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
 Plugin 'terryma/vim-multiple-cursors'
 " Black
-Plugin 'psf/black'
+"Plugin 'psf/black'
 
 
 " plugin from http://vim-scripts.org/vim/scripts.html

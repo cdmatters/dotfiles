@@ -1,5 +1,4 @@
 echo '~/.zshrc has run'
-source /etc/zshrc
 # Prevent old terminals breaking with backspace in Vim
 stty erase '^?'
 
