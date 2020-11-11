@@ -54,7 +54,10 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " From vdutor
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'inkarkat/vim-LineJuggler'
+Plugin 'tartansandal/vim-compiler-pytest'
 " Black
 "Plugin 'psf/black'
 
@@ -84,6 +87,8 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra' " search only up to a .git dir
 
+" Ste up Black
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,11 +104,11 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = "`"
-let g:mapleader = "`"
+let mapleader = "\<tab>"
+let g:mapleader = "\<tab>"
 
 " Fast saving
-nmap <leader>w :w!<cr>
+nnoremap <leader>w :w!<cr>
 
 set relativenumber
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,7 +175,7 @@ set number
 " Enable syntax highlighting
 syntax enable
 
-colorscheme molokai 
+colorscheme gruvbox 
 set background=dark
 " Allow different colourschemes for different filetyps
 autocmd Filetype python colorscheme gruvbox
@@ -212,7 +217,7 @@ set smarttab
 
 " 1 tab == 2 spaces
 set shiftwidth=2
-set tabstop=2
+set tabstop=4
 
 " for python and php files, 4 spaces
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
@@ -248,41 +253,45 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 "map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-"map <space> /
-"map <c-space> ?
+noremap <space> /
+noremap <s-space> ?
 
 " Allow mouse
 set mouse=a
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <leader>j <C-W>j
+noremap <leader>k <C-W>k
+noremap <leader>h <C-W>h
+noremap <leader>l <C-W>l
 
+" Quick build
+noremap <leader>m :Make %<cr>
+
+noremap <leader><tab> <c-w><c-w>
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+noremap <leader>bd :Bclose<cr>
 
 " Close all the buffers
-map <leader>ba :1,1000 bd!<cr>
+noremap <leader>ba :1,1000 bd!<cr>
 
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+" Useful noremap for managing tabs
+noremap <leader>tn :tabnew<cr>
+noremap <leader>to :tabonly<cr>
+noremap <leader>tc :tabclose<cr>
+noremap <leader>tm :tabmove
 
-map <leader>ll :tabn<cr>
-map <leader>hh :tabp<cr>
+noremap <leader>ll :tabn<cr>
+noremap <leader>hh :tabp<cr>
 " Opens a new tab with the current buffer's path
 " Super useful when editing files in the same directory
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+noremap <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 
 " Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+noremap <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Specify the behavior when switching between buffers 
 try
@@ -315,10 +324,10 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nnoremap <C-j> mz:m+<cr>`z
+nnoremap <C-k> mz:m-2<cr>`z
+vnoremap <C-j> :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <C-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
 func! DeleteTrailingWS()
@@ -337,10 +346,10 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 " Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+noremap <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
@@ -356,23 +365,23 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 " To go to the previous search results do:
 "   <leader>p
 "
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
+noremap <leader>cc :botright cope<cr>
+noremap <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+noremap <leader>n :cn<cr>
+noremap <leader>p :cp<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell checking
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
+noremap <leader>ss :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
+noremap <leader>sn ]s
+noremap <leader>sp [s
+noremap <leader>sa zg
+noremap <leader>s? z=
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -382,12 +391,18 @@ map <leader>s? z=
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Quickly open a buffer for scripbble
-map <leader>q :e ~/buffer<cr>
+noremap <leader>q :e ~/buffer<cr>
 
 " Toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
+noremap <leader>pp :setlocal paste!<cr>
 
+" Open vimrc
+noremap <leader>v :tabnew ~/dotfiles/vimrc<cr>
+noremap <leader>r :so ~/dotfiles/vimrc<cr>
 
+" Configure NERDTree
+noremap <leader>t :NERDTreeToggle<cr>
+nnoremap <Leader>tr :NERDTreeFocus<cr>R<c-w><c-p>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
@@ -450,8 +465,10 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " Disable all other linters for speed
-let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_cpp_checkers = ['cpplint']
 let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'AcceptSelection("e")': ['<cr>', '<c-e>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("v")': ['<c-v>'],
+    \ 'AcceptSelection("t")': ['<c-t>'],
     \ }
