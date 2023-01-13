@@ -6,6 +6,7 @@
   smudge = git hawser smudge %f
   required = true
 [alias]
+  st = status
   logdog = log --decorate --oneline --graph
   adds = add -p
   logs = log --format='%n%C(auto)%h %C(yellow)%an <%ce>%Creset%n %s ' --stat
@@ -24,3 +25,10 @@
     interactive = auto
     ui = true
     pager = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = main

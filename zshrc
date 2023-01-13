@@ -40,6 +40,7 @@ fi
 
 
 ### Aliases
+export CONDA_AUTO_ACTIVATE_BASE=false
 
 alias ll='ls -lG'
 alias la='ls -lGa'
