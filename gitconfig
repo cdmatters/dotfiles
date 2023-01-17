@@ -6,6 +6,8 @@
   smudge = git hawser smudge %f
   required = true
 [alias]
+  st = status
+  co = checkout
   logdog = log --decorate --oneline --graph
   adds = add -p
   logs = log --format='%n%C(auto)%h %C(yellow)%an <%ce>%Creset%n %s ' --stat
