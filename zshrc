@@ -16,7 +16,7 @@ else
   echo "failed launch  git-prompt"
 fi
 
-if [ -f ~/.gitignore.sh ]; then  
+if [ -f ~/.gitignore.sh ]; then
   source ~/.gitignore.sh
 else
   echo "failed launch  git-ignore"
@@ -87,8 +87,10 @@ alias tmuxconf='vim ~/dotfiles/tmux.conf'
 AM_PS1='%B%F{yellow}$(whoami)%b%f@%F{green}%m%f:%F{cyan}%~%f% $(__git_ps1 " (%s)") %# '
 alias amps1='PS1=$AM_PS1'
 
-alias o='nautilus . &'
-alias op='nautilus -s . &'
+alias o='open . '
+alias sshet='et devfair:8080 -jpot=8080 -t "8666:8666,3000:3000,2222:22,8888:8888,8889:8889,8890:8890" -x --noratelimit'
+
+
 
 alias cast2gif='docker run --rm -v $PWD:/data asciinema/asciicast2gif'
 alias weather='curl wttr.in'
