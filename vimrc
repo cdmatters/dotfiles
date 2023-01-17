@@ -99,8 +99,8 @@ set autoread
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
-let mapleader = "`"
-let g:mapleader = "`"
+let mapleader = "\<tab>"
+let g:mapleader = "\<tab>"
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -212,7 +212,7 @@ set smarttab
 
 " 1 tab == 2 spaces
 set shiftwidth=2
-set tabstop=2
+set tabstop=4
 
 " for python and php files, 4 spaces
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
@@ -248,20 +248,20 @@ vnoremap <silent> # :call VisualSelection('b')<CR>
 "map k gk
 
 " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
-"map <space> /
-"map <c-space> ?
+noremap <space> /
+"noremap <c-space> ?
 
 " Allow mouse
 set mouse=a
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader><cr> :noh<cr>
 
 " Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+noremap <leader>j <C-W>j
+noremap <leader>k <C-W>k
+noremap <leader>h <C-W>h
+noremap <leader>l <C-W>l
 
 " Close the current buffer
 map <leader>bd :Bclose<cr>
@@ -450,8 +450,10 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 " Disable all other linters for speed
-let g:syntastic_python_checkers = ['python']
+let g:syntastic_python_checkers = ['python', 'pylint']
+let g:syntastic_cpp_checkers = ['cpplint']
 let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
+    \ 'AcceptSelection("e")': ['<cr>','<c-e>','<2-LeftMouse>'],
+    \ 'AcceptSelection("v")': ['<c-v>'],
+    \ 'AcceptSelection("t")': ['<c-t>'],
     \ }
