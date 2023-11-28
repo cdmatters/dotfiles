@@ -1,4 +1,3 @@
-echo '~/.zshrc has run'
 source /etc/zshrc
 # Prevent old terminals breaking with backspace in Vim
 stty erase '^?'
@@ -6,7 +5,8 @@ stty erase '^?'
 ### Git Completion: 
 # sourcce the raw files on github.com: git/git/contrib/completion
 if [ -f ~/.git-completion.zsh ]; then 
-  source ~/.git-completion.zsh
+  zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+  fpath=(~/.zsh $fpath)
 else
   echo "failed launch  git-completion"
 fi
@@ -112,4 +112,4 @@ function o(){
   fi
 }
 
-
+echo '~/.zshrc has run'
