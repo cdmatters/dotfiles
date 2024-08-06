@@ -8,10 +8,14 @@
 [alias]
   st = status
   co = checkout
+  gn = grep --name-only
+  gg = grep
   logdog = log --decorate --oneline --graph
+  ud = pull origin --ff-only 
   adds = add -p
   logs = log --format='%n%C(auto)%h %C(yellow)%an <%ce>%Creset%n %s ' --stat
   po = push origin HEAD
+  yeet = push origin HEAD -f --no-verify
   keep-ours = "!f() { git checkout --ours -- $@ && git add $@; }; f "
   keep-theirs = "!f() { git checkout --theirs -- $@ && git add $@; }; f "
   br = for-each-ref  --sort=committerdate refs/heads/ --format='%(color:black bold)%(committerdate:short)%(color:reset) %(color:red)%(objectname:short)%(color:reset) %(color:white bold)%(HEAD)%(color: reset)%(color:yellow)%(refname:short)%(color:reset) (%(color:green)%(committerdate:relative)%(color:reset)) -- %(contents:lines=1)'
