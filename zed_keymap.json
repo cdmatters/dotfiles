@@ -32,5 +32,12 @@
       "space": "vim::Search",
       "tab w": "workspace::Save"
     }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-w": null,
+      "ctrl-w ctrl-w": ["workspace::SendKeystrokes", "escape ctrl-w ctrl-w"]
+    }
   }
 ]
