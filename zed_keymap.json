@@ -1,0 +1,36 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: Open Default Keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-=": "editor::ShowCompletions",
+      "cmd-.": ["workspace::SendKeystrokes", "escape l b e l ctrl-="],
+      "cmd-shift-d": [
+        "assistant::InlineAssist",
+        {
+          "prompt": "Write a numpydoc-compatible docstring. Use Python 3.9+ style typing; i.e. prefer `list[int]` to `List[int]`, `str | None` to `Optional[str]`, etc."
+        }
+      ]
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "space": "vim::Search",
+      "tab w": "workspace::Save"
+    }
+  }
+]
